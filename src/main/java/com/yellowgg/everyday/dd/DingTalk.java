@@ -38,6 +38,7 @@ public class DingTalk {
      * 每天中午12点更新
      */
     @Scheduled(cron = "0 0 12 * * ?")
+    // @Scheduled(cron = "0/2 * * * * ?")
     public void everyDayInterviewQuestions() throws Exception {
         DingTalkUtil.sendTextMsg(webHookUrl, key, javaPrimaryService.selectRandOne().getContent());
     }
