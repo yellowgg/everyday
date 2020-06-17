@@ -12,6 +12,7 @@
     <artifactId>everyday</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>everyday</name>
+    <packaging>jar</packaging>
     <description>每天每日</description>
 
     <properties>
