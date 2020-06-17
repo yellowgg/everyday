@@ -1,0 +1,4 @@
+# 钉钉WebHook机器人的安全设置 文档参考：https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq/uKPlK
+# 我这里使用了加签的方式
+dd:
+  signature: 你的签名
