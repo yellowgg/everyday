@@ -20,4 +20,6 @@ public interface JavaPrimaryMapper {
     int updateByPrimaryKeySelective(JavaPrimary record);
 
     int updateByPrimaryKey(JavaPrimary record);
+
+    JavaPrimary selectRandOne();
 }
