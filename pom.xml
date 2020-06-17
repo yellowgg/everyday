@@ -35,6 +35,40 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--配置文件处理器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 我把钉钉webhook机器人的jar包下载到本地，然后上传到我自己本地的maven仓库了   -->
+        <!--  如果你们报红的话是正常的，那你们也像我一样把jar包上传到本地仓库吧，然后改为自己设置的坐标即可-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dingtalk-sdk-java</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
