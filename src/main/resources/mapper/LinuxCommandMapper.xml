@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yellowgg.everyday.mapper.LinuxCommandMapper">
+    <resultMap id="BaseResultMap" type="com.yellowgg.everyday.entity.LinuxCommand">
+        <!--@mbg.generated-->
+        <!--@Table linuxcommand-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="gmtCreate" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, gmtCreate, deleted, `name`, url
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from linuxcommand
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from linuxcommand
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yellowgg.everyday.entity.LinuxCommand"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into linuxcommand (gmtCreate, deleted, `name`,
+                                  url)
+        values (#{gmtCreate,jdbcType=TIMESTAMP}, #{deleted,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+                #{url,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.yellowgg.everyday.entity.LinuxCommand" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into linuxcommand
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="gmtCreate != null">
+                gmtCreate,
+            </if>
+            <if test="deleted != null">
+                deleted,
+            </if>
+            <if test="name != null and name != ''">
+                `name`,
+            </if>
+            <if test="url != null and url != ''">
+                url,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleted != null">
+                #{deleted,jdbcType=INTEGER},
+            </if>
+            <if test="name != null and name != ''">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null and url != ''">
+                #{url,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yellowgg.everyday.entity.LinuxCommand">
+        <!--@mbg.generated-->
+        update linuxcommand
+        <set>
+            <if test="gmtCreate != null">
+                gmtCreate = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleted != null">
+                deleted = #{deleted,jdbcType=INTEGER},
+            </if>
+            <if test="name != null and name != ''">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null and url != ''">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yellowgg.everyday.entity.LinuxCommand">
+        <!--@mbg.generated-->
+        update linuxcommand
+        set gmtCreate = #{gmtCreate,jdbcType=TIMESTAMP},
+            deleted   = #{deleted,jdbcType=INTEGER},
+            `name`    = #{name,jdbcType=VARCHAR},
+            url       = #{url,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectRandOne" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from javaprimary
+        order by rand()
+        limit 1
+    </select>
+</mapper>
