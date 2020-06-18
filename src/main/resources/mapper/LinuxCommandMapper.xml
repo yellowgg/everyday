@@ -100,7 +100,7 @@
     <select id="selectRandOne" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from javaprimary
+        from linuxcommand
         order by rand()
         limit 1
     </select>
